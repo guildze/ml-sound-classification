@@ -1,35 +1,59 @@
-# Assets Folder
-This folder can contain any images, sounds, or other resources required for the project.
-Files Needed
-1. explosion.wav
-Place a sound file named explosion.wav in the sounds/ directory. This is the sound that plays when a snap is detected.
+# Voice Command Detection and Explosion Effect
 
-2. Assets/README.md
-Optional file for documentation of assets. You can add placeholder text like:
+This project implements a voice command detection system that listens for the Thai word "ระเบิด" ("explode"). Upon detecting the command, the program plays an explosion video along with a sound effect.
 
-python
-Copy code
-# Assets Folder
-This folder can contain any images, sounds, or other resources required for the project.
-Steps to Run the Program
-Install Required Libraries: Run the following command in your terminal to install the necessary dependencies:
+## Features
+- **Voice Command Recognition**: Listens for the specific word "ระเบิด" using Google Speech Recognition API.
+- **Explosion Effect**: Plays an explosion video and sound effect for a duration of 5 seconds when the command is detected.
+- **Full-Screen Display**: Utilizes Pygame to create a 1920x1080 resolution display for video playback.
 
-bash
-Copy code
-pip install pygame numpy pyaudio
-Ensure Directory Structure: Make sure the directory structure matches what is outlined above.
+## Prerequisites
+To run this project, the following dependencies must be installed:
 
-Run the Program: Run the main.py script:
+### Python Libraries
+- `pygame`
+- `pyaudio`
+- `numpy`
+- `opencv-python`
+- `speechrecognition`
 
-bash
-Copy code
-python main.py
-Test the Program: Make a finger snap sound near your microphone and observe if the explosion effect is triggered.
+### Installation
+You can install the required libraries using the following commands:
+```bash
+pip install pygame pyaudio numpy opencv-python speechrecognition
+```
 
-This structure makes it easy to expand and maintain the project as needed. Let me know if you need additional features or enhancements!
+### Additional Setup
+- Ensure you have a microphone connected and properly configured.
+- Place the explosion video file (`explosion.mp4`) in the same directory as the script.
+- Place the explosion sound file (`explosion_sound.mp3`) in a folder named `sounds`.
 
+## How to Run
+1. Clone or download the repository.
+2. Ensure all dependencies are installed.
+3. Run the script:
+   ```bash
+   python main.py
+   ```
+4. Speak the word "ระเบิด" into the microphone.
+5. The program will play the explosion video and sound effect if the command is recognized.
 
+## Project Structure
+- `main.py`: The main script for the project.
+- `sounds/explosion_sound.mp3`: The sound effect played during the explosion.
+- `explosion.mp4`: The video played during the explosion.
 
+## Limitations
+- Requires an internet connection for the Google Speech Recognition API.
+- The program may not recognize the word "ระเบิด" in noisy environments.
 
+## Customization
+- To change the voice command, modify the word "ระเบิด" in the `detect_voice_command` function.
+- Replace `explosion.mp4` and `explosion_sound.mp3` with your own video and sound files for a custom effect.
 
+## Credits
+- Developed using Python and popular libraries such as Pygame, OpenCV, and SpeechRecognition.
+
+## License
+This project is open-source and available under the MIT License.
 
